@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html dir="rtl">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" class="topbar">
+            <div class="searchbox">
+            <asp:Textbox ID="txtsearch" runat="server" placeholder="بحث.." class="fa fa-search" aria-hidden="true"></asp:Textbox>
+            </div>
+            <asp:LinkButton runat="server" OnClick="homepage_Click"><i class="fa fa-home"></i></asp:LinkButton>
+            <asp:LinkButton runat="server" OnClick="profilepage_Click" Text="الملف الشخصي"></asp:LinkButton>
+            <asp:LinkButton runat="server" OnClick="profilepage_Click" Text="إضافة موظف"></asp:LinkButton>
+            <asp:LinkButton runat="server" OnClick="profilepage_Click" Text="الإجازات"></asp:LinkButton>
+            <asp:LinkButton runat="server" OnClick="profilepage_Click" Text="التقارير"></asp:LinkButton>
+            <asp:LinkButton runat="server" OnClick="profilepage_Click" Text="غرفة المحادثة"></asp:LinkButton>
+            <div class="dropdown">
+                <a class="accounticon"> <i class="fa fa-user-circle" aria-hidden="true"></i></a>
+                    <div class="dropdown-content">
+                        <asp:LinkButton runat="server" ID="account" Text="حسابي" OnClick="account_Click" />
+                        <p class="separator" ></p>
+                        <asp:LinkButton runat="server" ID="logout" Text="تسجيل الخروج" OnClick="logout_Click" />
+                    </div>      
+            </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
